@@ -53,7 +53,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">#MosquitoAlertBCN</a>
+    <a class="navbar-brand" href="#">MosquitoAlertCat</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -124,11 +124,11 @@
 
 
 
-<script src="js/georaster.browser.bundle.min.js"></script>
-<script src="js/georaster-layer-for-leaflet.browserify.min.js"></script>
+<!-- <script src="js/georaster.browser.bundle.min.js"></script>
+<script src="js/georaster-layer-for-leaflet.browserify.min.js"></script> -->
 
 
-<script src="js/chroma.min.js"></script>
+<!-- <script src="js/chroma.min.js"></script> -->
 
   
       <script type="text/javascript">
@@ -169,14 +169,14 @@ function add_layer(a_date, remove_layer){
           }
  
       var service_url = "https://geotigre.ceab.csic.es/geoserver/gwc/service/wms?";
-      var layer = L.tileLayer.wms(service_url,
+      layerGeo = L.tileLayer.wms(service_url,
 {
-  layers: 'ceab.tigadata:catalonia_mosquito_alert_probability_2020-08-01_res20m_crs4326',
+  layers: 'ceab.tigadata:catalonia_mosquito_alert_probability_' + a_date + '_res20m_crs4326',
   format: 'image/png',
   transparent: true,
   tiled: true
 });
-layer.addTo(mymap);
+layerGeo.addTo(mymap);
 
 
 
