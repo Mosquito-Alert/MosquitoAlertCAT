@@ -192,13 +192,14 @@ $(document).ready(function() {
       var date_today = new Date();
       var date_today_fmt = '2020-09-01'
       add_layer(date_today_fmt, false);
+      $("#cast_type").text("Historical").removeClass().addClass("badge bg-primary");
 
 $('#datepicker_id').datepicker({
     format: 'dd/mm/yyyy',
-    todayHighlight: true,
+    todayHighlight: false,
     startDate: '02/07/2020',
     endDate: '30/11/2020',
-    defaultViewDate: '01/09/2020'
+    setDate: '01/09/2020'
 })
   .on('changeDate', function(e) {
       
