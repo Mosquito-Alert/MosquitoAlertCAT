@@ -63,7 +63,7 @@
 
 var myChart = echarts.init(document.getElementById('main'));
 
-$.get('https://mosquito-alert.github.io/bcn/data/bcn_time_profile_data.json').done(function (data) {
+$.get('data/cat_time_profile_data.json').done(function (data) {
   
       var these_dates = data.map(function(item){return item['date']});
       var forecast_start = these_dates[these_dates.length - 7];
@@ -72,7 +72,7 @@ $.get('https://mosquito-alert.github.io/bcn/data/bcn_time_profile_data.json').do
     myChart.setOption({
        title: {
         left: 'center',
-        text: 'Barcelona Citywide VRI',
+        text: 'Catalonia VRI',
     },
         tooltip: {
         trigger: 'axis',
@@ -137,7 +137,7 @@ $.get('https://mosquito-alert.github.io/bcn/data/bcn_time_profile_data.json').do
 
 var district_chart = echarts.init(document.getElementById('district_chart'));
 
-$.get('https://mosquito-alert.github.io/bcn/data/bcn_district_means.json').done(function (data) {
+$.get('data/cat_district_means.json').done(function (data) {
   
     var these_dates = [];
     var district_names = [];

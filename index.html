@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MosquitoAlertCat</title>
+    <title>MosquitoAlertCAT</title>
     
     
     <!--SOME CUSTOM CSS-->
@@ -53,7 +53,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">MosquitoAlertCat</a>
+    <a class="navbar-brand" href="#">MosquitoAlertCAT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -190,13 +190,15 @@ var layerGeo;
 $(document).ready(function() {
 
       var date_today = new Date();
-      var date_today_fmt = date_today.getFullYear() + '-' + (1+date_today.getMonth()).toString().padStart(2, '0') + '-' + date_today.getDate().toString().padStart(2, '0'); 
-
+      var date_today_fmt = '2020-09-01'
       add_layer(date_today_fmt, false);
 
 $('#datepicker_id').datepicker({
     format: 'dd/mm/yyyy',
     todayHighlight: true,
+    startDate: '02/07/2020',
+    endDate: '30/11/2020',
+    defaultViewDate: '01/09/2020'
 })
   .on('changeDate', function(e) {
       
