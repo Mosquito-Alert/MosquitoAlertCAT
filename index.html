@@ -171,7 +171,8 @@ function add_layer(a_date, remove_layer){
       var service_url = "https://geotigre.ceab.csic.es/geoserver/gwc/service/wms?";
       layerGeo = L.tileLayer.wms(service_url,
 {
-  layers: 'ceab.tigadata:catalonia_mosquito_alert_probability_' + a_date + '_res20m_crs4326',
+//  layers: 'ceab.tigadata:catalonia_mosquito_alert_probability_' + a_date + '_res20m_crs4326',
+  layers: 'ceab.tigadata:MALERT_prob_CAT_' + a_date,
   format: 'image/png',
   transparent: true,
   tiled: true
