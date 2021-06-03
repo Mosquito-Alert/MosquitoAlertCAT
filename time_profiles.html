@@ -63,7 +63,7 @@
 
 var myChart = echarts.init(document.getElementById('main'));
 
-$.get('data/cat_time_profile_data.json').done(function (data) {
+$.get('https://mosquito-alert.github.io/MosquitoAlertCat/data/cat_time_profile_data.json').done(function (data) {
   
       var these_dates = data.map(function(item){return item['date']});
       var forecast_start = these_dates[these_dates.length - 7];
@@ -137,7 +137,7 @@ $.get('data/cat_time_profile_data.json').done(function (data) {
 
 var district_chart = echarts.init(document.getElementById('district_chart'));
 
-$.get('data/cat_district_means.json').done(function (data) {
+$.get('https://mosquito-alert.github.io/MosquitoAlertCat/data/cat_district_means.json').done(function (data) {
   
     var these_dates = [];
     var district_names = [];
@@ -145,71 +145,32 @@ $.get('data/cat_district_means.json').done(function (data) {
     var D02 = [];
     var D03 = [];
     var D04 = [];
-    var D05 = [];
-    var D06 = [];
-    var D07 = [];
-    var D08 = [];
-    var D09 = [];
-    var D10 = [];
     
     
     data.forEach(function(item){
-      if (item['DISTRICTE']=='01') 
+      if (item['NPRO']=='Barcelona') 
       { these_dates.push(item['date']);
         D01.push(item['value']);
-        district_names.push(item['District'])
+        district_names.push(item['NPRO'])
       };
 
-      if (item['DISTRICTE']=='02') 
+      if (item['NPRO']=='Girona') 
       { D02.push(item['value']);
-        district_names.push(item['District'])
+        district_names.push(item['NPRO'])
       };
 
-      if (item['DISTRICTE']=='03') 
+      if (item['NPRO']=='Lleida') 
       { D03.push(item['value']);
-        district_names.push(item['District'])
+        district_names.push(item['NPRO'])
 
       };
 
-      if (item['DISTRICTE']=='04') 
+      if (item['NPRO']=='Tarragona') 
       { D04.push(item['value']);
-        district_names.push(item['District'])
+        district_names.push(item['NPRO'])
 
       };
 
-      if (item['DISTRICTE']=='05') { 
-        D05.push(item['value']);
-        district_names.push(item['District'])
-
-      };
-
-      if (item['DISTRICTE']=='06') 
-      { D06.push(item['value']);
-      district_names.push(item['District'])
-      };
-
-      if (item['DISTRICTE']=='07') 
-      { D07.push(item['value']);
-      district_names.push(item['District'])
-      };
-
-      if (item['DISTRICTE']=='08') 
-      { D08.push(item['value']);
-      district_names.push(item['District'])
-      };
-
-      if (item['DISTRICTE']=='09') 
-      { D09.push(item['value']);
-      district_names.push(item['District'])
-      };
-
-      if (item['DISTRICTE']=='10') 
-      { D10.push(item['value']);
-      district_names.push(item['District'])
-      };
-      
-          
-      
     });
   
   function onlyUnique(value, index, self) {
@@ -223,7 +184,7 @@ $.get('data/cat_district_means.json').done(function (data) {
     district_chart.setOption({
        title: {
         left: 'center',
-        text: 'Barcelona District VRI',
+        text: 'Catalonia Province VRI',
     },
     legend: {
       data: district_names,
@@ -294,48 +255,6 @@ $.get('data/cat_district_means.json').done(function (data) {
         type: 'line',
         showSymbol: false,
         smooth: true
-    },
-    {
-        name: district_names[4],
-        data: D05,
-        type: 'line',
-        showSymbol: false,
-        smooth: true
-    },
-    {
-        name: district_names[5],
-        data: D06,
-        type: 'line',
-        showSymbol: false,
-        smooth: true
-    },
-    {
-        name: district_names[6],
-        data: D07,
-        type: 'line',
-        showSymbol: false,
-        smooth: true
-    },
-    {
-        name: district_names[7],
-        data: D08,
-        type: 'line',
-        showSymbol: false,
-        smooth: true
-    },
-    {
-        name: district_names[8],
-        data: D09,
-        type: 'line',
-        showSymbol: false,
-        smooth: true
-    },
-    {
-        name: district_names[9],
-        data: D10,
-        type: 'line',
-        showSymbol: false,
-        smooth: true,
                 markArea: {
                 itemStyle: {
                     color: 'rgba(255, 173, 177, 0.4)'
