@@ -63,7 +63,7 @@
 
 var myChart = echarts.init(document.getElementById('main'));
 
-$.get('https://mosquito-alert.github.io/MosquitoAlertCAT/data/cat_time_profile_data.json').done(function (data) {
+$.get('https://raw.githubusercontent.com/Mosquito-Alert/MosquitoAlertCAT/main/data/cat_time_profile_data.json').done(function (data) {
   
       var these_dates = data.map(function(item){return item['date']});
       var forecast_start = these_dates[these_dates.length - 7];
@@ -137,7 +137,7 @@ $.get('https://mosquito-alert.github.io/MosquitoAlertCAT/data/cat_time_profile_d
 
 var district_chart = echarts.init(document.getElementById('district_chart'));
 
-$.get('https://mosquito-alert.github.io/MosquitoAlertCAT/data/cat_district_means.json').done(function (data) {
+$.get('https://raw.githubusercontent.com/Mosquito-Alert/MosquitoAlertCAT/main/data/cat_district_means.json').done(function (data) {
   
     var these_dates = [];
     var district_names = [];
